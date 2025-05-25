@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 17:44:40 by bszikora          #+#    #+#             */
-/*   Updated: 2025/04/28 18:32:55 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/05/25 15:50:04 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ Animal::~Animal()
 	std::cout << "Animal destructor called\n";
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
 	std::cout << "I might have made a sound, but nobody was there to hear it. So did I make a sound?\n";
 }
+
+std::string Animal::getType() const { return this->type; }

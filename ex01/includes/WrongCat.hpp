@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 15:52:09 by bszikora          #+#    #+#             */
-/*   Updated: 2025/05/25 15:59:32 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/06/19 14:59:38 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ public:
 	WrongCat(const WrongCat& other);
 	WrongCat& operator=(const WrongCat& other);
 	~WrongCat();
+	
+	void makeSound(void) const;
 };
 
 #endif

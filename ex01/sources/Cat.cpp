@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:38:04 by bszikora          #+#    #+#             */
-/*   Updated: 2025/05/25 17:26:00 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/06/19 15:41:29 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,14 @@ Cat::~Cat()
 void	Cat::makeSound(void) const
 {
 	std::cout << "Sassy cat goes gently: \"Meoow, Meoow\"\n";
+}
+
+Brain* Cat::getBrain() const
+{
+    return this->brain;
+}
+
+void Cat::setBrain(const Brain& newBrain)
+{
+    *this->brain = newBrain;
 }

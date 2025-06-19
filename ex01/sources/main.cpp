@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 17:35:45 by bszikora          #+#    #+#             */
-/*   Updated: 2025/05/25 17:42:25 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/06/19 15:42:27 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,55 @@
 // }
 int main()
 {
-	Animal* weirdzoo[10];
+    const int size = 10;
+    Animal* animals[size];
 
-	for (int i = 0; i < 5; i++)
-	{
-		weirdzoo[i] = new Dog();
-	}
-	for (int i = 6; i < 5; i++)
-	{
-		weirdzoo[i] = new Cat();
-	}
-	for (int i = 0; i ; i++)
-	{
-		weirdzoo[i]->makeSound();
-	}
-	
-	return (0);
+    // Fill half the array with Dog objects
+    for (int i = 0; i < size / 2; i++)
+    {
+        animals[i] = new Dog();
+    }
+
+    // Fill the other half with Cat objects
+    for (int i = size / 2; i < size; i++)
+    {
+        animals[i] = new Cat();
+    }
+
+    // Call makeSound for each animal
+    for (int i = 0; i < size; i++)
+    {
+        animals[i]->makeSound();
+    }
+
+    // Delete all animals
+    for (int i = 0; i < size; i++)
+    {
+        delete animals[i];
+    }
+
+    // Test deep copy and assignment
+    Dog originalDog;
+    originalDog.getBrain()->setIdea(0, "Original idea");
+
+    // Copy constructor
+    Dog copiedDog(originalDog);
+    std::cout << "Copied Dog Brain Idea 0: " << copiedDog.getBrain()->getIdea(0) << std::endl;
+
+    // Modify original
+    originalDog.getBrain()->setIdea(0, "Modified idea");
+    std::cout << "Original Dog Brain Idea 0 after modification: " << originalDog.getBrain()->getIdea(0) << std::endl;
+    std::cout << "Copied Dog Brain Idea 0 after original modification: " << copiedDog.getBrain()->getIdea(0) << std::endl;
+
+    // Assignment operator
+    Dog assignedDog;
+    assignedDog = originalDog;
+    std::cout << "Assigned Dog Brain Idea 0: " << assignedDog.getBrain()->getIdea(0) << std::endl;
+
+    // Modify original again
+    originalDog.getBrain()->setIdea(0, "Another modification");
+    std::cout << "Original Dog Brain Idea 0 after second modification: " << originalDog.getBrain()->getIdea(0) << std::endl;
+    std::cout << "Assigned Dog Brain Idea 0 after original second modification: " << assignedDog.getBrain()->getIdea(0) << std::endl;
+
+    return 0;
 }

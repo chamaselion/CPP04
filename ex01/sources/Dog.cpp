@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:29:58 by bszikora          #+#    #+#             */
-/*   Updated: 2025/05/25 17:27:20 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/06/19 15:41:30 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,14 @@ Dog::~Dog()
 void Dog::makeSound() const
 {
 	std::cout << "Good boy goes loudly: \"Woof! Woof!\"\n";
+}
+
+Brain* Dog::getBrain() const
+{
+    return this->brain;
+}
+
+void Dog::setBrain(const Brain& newBrain)
+{
+    *this->brain = newBrain;
 }

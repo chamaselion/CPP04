@@ -1,4 +1,4 @@
-NAME		=	program_name
+NAME		=	animals
 CC		=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 INCL_DIR	=	includes

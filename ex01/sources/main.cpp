@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
+/*   By: bszikora <bszikora@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 17:35:45 by bszikora          #+#    #+#             */
-/*   Updated: 2025/06/19 15:42:27 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/06/19 16:17:25 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,24 +78,12 @@ int main()
     Dog originalDog;
     originalDog.getBrain()->setIdea(0, "Original idea");
 
-    // Copy constructor
-    Dog copiedDog(originalDog);
-    std::cout << "Copied Dog Brain Idea 0: " << copiedDog.getBrain()->getIdea(0) << std::endl;
-
-    // Modify original
-    originalDog.getBrain()->setIdea(0, "Modified idea");
-    std::cout << "Original Dog Brain Idea 0 after modification: " << originalDog.getBrain()->getIdea(0) << std::endl;
-    std::cout << "Copied Dog Brain Idea 0 after original modification: " << copiedDog.getBrain()->getIdea(0) << std::endl;
-
-    // Assignment operator
-    Dog assignedDog;
-    assignedDog = originalDog;
-    std::cout << "Assigned Dog Brain Idea 0: " << assignedDog.getBrain()->getIdea(0) << std::endl;
-
-    // Modify original again
-    originalDog.getBrain()->setIdea(0, "Another modification");
-    std::cout << "Original Dog Brain Idea 0 after second modification: " << originalDog.getBrain()->getIdea(0) << std::endl;
-    std::cout << "Assigned Dog Brain Idea 0 after original second modification: " << assignedDog.getBrain()->getIdea(0) << std::endl;
+	Dog copiDog;
+	{
+		copiDog = originalDog;
+	}
+	
+    std::cout << "Copied Dog Brain Idea 0: " << copiDog.getBrain()->getIdea(0) << std::endl;
 
     return 0;
 }

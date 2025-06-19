@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 17:35:45 by bszikora          #+#    #+#             */
-/*   Updated: 2025/05/25 16:08:50 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/05/25 17:42:25 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
+#include <cstdlib> // For exit()
+#include <cerrno>  // For perror()
 
 
 // int main()
@@ -30,16 +32,35 @@
 // 	return 0;
 // }
 
+// int main()
+// {
+// const Animal* meta = new Animal();
+// const Animal* j = new Dog();
+// const WrongAnimal* i = new WrongCat();
+// std::cout << j->getType() << " " << std::endl;
+// std::cout << i->getType() << " " << std::endl;
+// i->makeSound(); //will output the cat sound!
+// j->makeSound();
+// meta->makeSound();
+
+// return 0;
+// }
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const WrongAnimal* i = new WrongCat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
+	Animal* weirdzoo[10];
 
-return 0;
+	for (int i = 0; i < 5; i++)
+	{
+		weirdzoo[i] = new Dog();
+	}
+	for (int i = 6; i < 5; i++)
+	{
+		weirdzoo[i] = new Cat();
+	}
+	for (int i = 0; i ; i++)
+	{
+		weirdzoo[i]->makeSound();
+	}
+	
+	return (0);
 }

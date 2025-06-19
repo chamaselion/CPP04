@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 17:35:37 by bszikora          #+#    #+#             */
-/*   Updated: 2025/06/19 14:46:35 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/06/19 15:47:44 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	Animal& operator=(const Animal& other);
 	virtual ~Animal();
 
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 	std::string getType() const;
 };
 
